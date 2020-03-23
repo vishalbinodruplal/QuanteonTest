@@ -1,0 +1,65 @@
+<div class="example-card1">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{ formTitle }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form>
+                <table cellspacing="0">
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Confirmation Number" [(ngModel)]="cnfNumber" name="cnfNumber" required maxlength="10" numbersOnly>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Last Name" [(ngModel)]="lstName" name="lstName" required oninput="this.value = this.value.toLowerCase()">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Email</mat-label>
+                                <input matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com" [(ngModel)]="emailid" name="emailid" oninput="this.value = this.value.toLowerCase()">
+                                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                  Please enter a valid email address
+                                </mat-error>
+                                <mat-error *ngIf="emailFormControl.hasError('required')">
+                                  Email is <strong>required</strong>
+                                </mat-error>
+                              </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Contact Number</mat-label>
+                                <span matPrefix>+91 &nbsp;</span>
+                                <input type="tel" matInput maxlength="10" numbersOnly [(ngModel)]="contact" name="contact" >
+                              </mat-form-field>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <div *ngIf="flag2">
+                <font color="red">
+                    Invalid Details
+                </font>
+            </div>
+            <div *ngIf="flag4">
+                <font color="red">
+                    You have already Checked-in
+                </font>
+            </div>
+            <div>
+                <button mat-raised-button (click)="evaluateDetails()" color="primary">Click To Proceed</button>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</div>

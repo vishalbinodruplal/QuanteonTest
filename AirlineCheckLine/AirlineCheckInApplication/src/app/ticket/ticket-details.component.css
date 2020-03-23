@@ -1,0 +1,28 @@
+.set-Parent-Padding{
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%
+}
+
+.table1 {
+    width:100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+ .th1 {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 8px;
+    text-align: left;
+ }
+ .td1 {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 8px;
+    text-align: left;
+ }
+
+ table {
+   width: 100%;
+ }

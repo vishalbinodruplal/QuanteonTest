@@ -1,0 +1,22 @@
+package com.airlinecheckin.io.airlinecheckin.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.airlinecheckin.io.airlinecheckin.model.PassengerDetails;
+import com.airlinecheckin.io.airlinecheckin.service.PassengerDetailsService;
+
+@RestController
+public class PassengerDetailsController {
+
+	@Autowired
+	private PassengerDetailsService passengerDetailsService; 
+	
+	@RequestMapping("/passengers/{confirmno}")
+	public PassengerDetails getPassengerDetails(@PathVariable String confirmno){
+		return passengerDetailsService.getPassengerDetails(confirmationNo);
+	}
+	
+}

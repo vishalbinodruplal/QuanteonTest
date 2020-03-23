@@ -1,0 +1,54 @@
+<div style="padding: 2%;">
+    <table style="margin-left: auto; margin-right: auto; border: 1px solid black;">
+        <th style="text-align: center;">Safety Instructions!</th>
+        <tr>
+            <td>1. Fly on Nonstop Routings</td>
+        </tr>
+        <tr>
+            <td>2. Choose Larger Aircraft</td>
+        </tr>
+        <tr>
+            <td>3. Pay Attention to the Preflight Briefing</td>
+        </tr>
+        <tr>
+            <td>4. Keep the Overhead Storage Bin Free of Heavy Articles</td>
+        </tr>
+        <tr>
+            <td>5. Keep Your Seat Belt Fastened While You are Seated</td>
+        </tr>
+        <tr>
+            <td>6. Listen to the Flight Attendants</td>
+        </tr>
+        <tr>
+            <td>7. Don't Bring Any Hazardous Material</td>
+        </tr>
+        <tr>
+            <td>8. Let the Flight Attendant Pour Your Hot Drinks</td>
+        </tr>
+        <tr>
+            <td>9. Don't Drink Too Much during the flight time</td>
+        </tr>
+        <tr>
+            <td>10. Keep Your Wits About You</td>
+        </tr>
+        <tr>
+            <td>
+                <section class="example-section">
+                    <mat-checkbox (disabled)="disabled" class="example-margin" [(ngModel)]="checked">
+                        I Accept the Safety Instructions
+                    </mat-checkbox>
+                  </section>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <button style="margin-right: 0%;" [disabled]='!checked' mat-raised-button (click)="performCheckIn()" color="primary">Proceed To checkIn</button>
+                  </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+
+</div>

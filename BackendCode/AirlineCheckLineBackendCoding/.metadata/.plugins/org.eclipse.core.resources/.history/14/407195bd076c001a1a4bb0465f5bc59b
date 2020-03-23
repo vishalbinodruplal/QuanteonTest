@@ -1,0 +1,17 @@
+package com.airlinecheckin.io.airlinecheckin.service;
+
+import java.util.List;
+
+import com.airlinecheckin.io.airlinecheckin.model.PassengerDetails;
+
+public class PassengerDetailsService {
+
+	private List<PassengerDetails> topics = new ArrayList<>(Arrays.asList(
+			new PassengerDetails("123456", "Anand Kumar", "Singh", 25, "anand@abc.com", "9845675432", "4C", false)
+			));
+	
+	String confirmationNo, String firstName,
+	String lastName, int age, String email, String contactNo,
+	String seatNo, boolean checkedInStatus
+	
+}

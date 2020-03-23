@@ -1,0 +1,32 @@
+package com.airlinecheckin.io.airlinecheckin.service;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+import com.airlinecheckin.io.airlinecheckin.model.PassengerDetails;
+
+@Service
+public class PassengerDetailsService {
+
+	private List<PassengerDetails> passengerDetails = new ArrayList<>(Arrays.asList(
+			new PassengerDetails("123456", "Anand Kumar", "Singh", 25, "anand@abc.com", "9845675432", "4C", false),
+			new PassengerDetails("123456", "Chandralok", "Mishra", 27, "chandu@abc.com", "9845695432", "5B", false),
+			new PassengerDetails("123456", "Dipan", "Mirgani", 26, "dipan@abc.com", "9868545432", "4B", false),
+			new PassengerDetails("123456", "Vishal Kumar", "Yadav", 26, "vishal@abc.com", "9823561766", "4A", false),
+			new PassengerDetails("123456", "Pankaj", "Kumar", 25, "pankaj@abc.com", "9068545432", "4D", false)
+			));
+	
+	public List<PassengerDetails> getPassengerDetails(String confirmationNo){
+		List<PassengerDetails> passengerDetailsList = new ArrayList<>();
+		passengerDetails.stream().filter(t -> t.getConfirmationNo().equals(confirmationNo))
+				.forEach(passengerDetailsList :: add);
+		return passengerDetailsList;
+	}
+	
+	public void doCheckIn(String cnfNo, String seatNo){
+		
+	}
+	
+}

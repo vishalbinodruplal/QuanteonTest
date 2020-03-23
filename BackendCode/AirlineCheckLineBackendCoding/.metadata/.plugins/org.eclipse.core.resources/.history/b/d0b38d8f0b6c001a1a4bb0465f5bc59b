@@ -1,0 +1,10 @@
+package com.airlinecheckin.io.airlinecheckin.model;
+
+public class Flightdetails {
+
+	private String confirmationNo;
+	private String flightNo;
+	private String flightFrom;
+	private String flightTo;
+	
+}

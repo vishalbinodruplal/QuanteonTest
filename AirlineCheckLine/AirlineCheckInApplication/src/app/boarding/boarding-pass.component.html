@@ -1,0 +1,43 @@
+<div style="padding: 8px; margin-left: 85%;margin-right: 5%;">
+    <button style="margin-right: 0%;" mat-raised-button (click)="backToHome()" color="primary">Back To Home</button>
+</div>
+<div class="set-Parent-Padding" style="height: 100%;" *ngIf='userData && userData.length'>
+    <div *ngFor='let passData of userData'>
+        <table class="table1">
+            <th colspan="3" style="text-align: center;" class="th1">
+                Boarding Pass
+            </th>
+            <tr>
+            <th class="th1">Flight Number</th>
+            <th class="th1">From (Source)</th> 
+            <th class="th1">To (Destination)</th>
+            </tr>
+            <tr>
+            <td class="td1">{{ flightDetails.flightNo | uppercase }}</td>
+            <td class="td1">{{ flightDetails.flightFrom | uppercase }}</td>
+            <td class="td1">{{ flightDetails.flightTo | uppercase }}</td>
+            </tr>
+            <tr>
+            <th class="th1">First Name</th>
+            <th class="th1">Last Name</th> 
+            <th class="th1">Age</th>
+            </tr>
+            <tr>
+                <td class="td1">{{ passData.firstName | uppercase }}</td>
+                <td class="td1">{{ passData.lastName | uppercase }}</td>
+                <td class="td1">{{ passData.age }}</td>
+            </tr>
+            <tr>
+                <th class="th1">Seat Number</th>
+                <th class="th1">Contact No.</th>
+                <th class="th1">Email_Id</th> 
+            </tr>
+            <tr>
+                <td class="td1">{{ passData.seatNo }}</td>
+                <td class="td1">{{ passData.contactNo }}</td>
+                <td class="td1">{{ passData.email }}</td>
+            </tr>
+        </table>
+        <br/><br/>
+      </div>
+</div>

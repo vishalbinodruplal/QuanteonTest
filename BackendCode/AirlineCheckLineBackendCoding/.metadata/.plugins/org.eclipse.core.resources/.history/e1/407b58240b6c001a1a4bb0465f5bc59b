@@ -1,0 +1,5 @@
+package com.airlinecheckin.io.airlinecheckin.controller;
+
+public class PassengerDetailsController {
+
+}

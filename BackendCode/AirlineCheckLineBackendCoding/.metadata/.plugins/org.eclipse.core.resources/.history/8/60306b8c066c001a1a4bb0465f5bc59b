@@ -1,0 +1,14 @@
+package com.airlinecheckin.io.airlinecheckin.model;
+
+public class PassengerDetails {
+	
+	private int confirmationNo;
+	private String firstName;
+	private String lastName;
+	private int age;
+	private String email;
+	private String contactNo;
+	private String seatNo;
+	
+
+}

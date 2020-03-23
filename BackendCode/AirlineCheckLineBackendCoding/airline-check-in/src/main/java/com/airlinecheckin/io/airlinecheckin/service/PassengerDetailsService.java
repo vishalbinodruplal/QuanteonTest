@@ -1,0 +1,53 @@
+package com.airlinecheckin.io.airlinecheckin.service;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+import com.airlinecheckin.io.airlinecheckin.model.PassengerDetails;
+
+@Service
+public class PassengerDetailsService {
+
+	private List<PassengerDetails> passengerDetails = new ArrayList<>(Arrays.asList(
+			new PassengerDetails("123456", "anand kumar", "singh", 25, "anand@abc.com", "9845675432", "4C", false),
+			new PassengerDetails("123456", "chandralok", "mishra", 27, "chandu@abc.com", "9845695432", "5B", false),
+			new PassengerDetails("123456", "dipan", "mirgani", 26, "dipan@abc.com", "9868545432", "4B", false),
+			new PassengerDetails("123456", "vishal kumar", "yadav", 26, "vishal@abc.com", "9823561766", "4A", false),
+			new PassengerDetails("123456", "pankaj", "kumar", 25, "pankaj@abc.com", "9068545432", "4D", false),
+			
+			new PassengerDetails("987654", "manish", "alaspure", 25, "manish@abc.com", "9841235432", "4C", false),
+			new PassengerDetails("987654", "vipin", "sharma", 27, "vipin@abc.com", "9845975432", "5B", false),
+			new PassengerDetails("987654", "parag", "kulkarni", 26, "parag@abc.com", "9868545745", "4B", false)
+			));
+	
+	public List<PassengerDetails> getPassengerDetails(String confirmationNo){
+		List<PassengerDetails> passengerDetailsList = new ArrayList<>();
+		passengerDetails.stream().filter(t -> t.getConfirmationNo().equals(confirmationNo))
+				.forEach(passengerDetailsList :: add);
+		return passengerDetailsList;
+	}
+	
+	public void doCheckIn(String cnfNo, String seatNo){
+		for(int i=0; i<passengerDetails.size(); i++){
+			PassengerDetails t = passengerDetails.get(i);
+			if(t.getConfirmationNo().equals(cnfNo) && t.getSeatNo().equals(seatNo)){
+				t.setCheckedInStatus(true);
+				passengerDetails.set(i, t);
+				return;
+			}
+		}
+	}
+	
+	public List<PassengerDetails> getSelectedPassenger(String confirmationNo, String seatNo){
+		List<PassengerDetails> selectedPassengerDetailsList = new ArrayList<>();
+		String seats[] = seatNo.split(",");
+		for (String s : seats) {
+			passengerDetails.stream().filter(t -> t.getConfirmationNo().equals(confirmationNo) && t.getSeatNo().equals(s))
+			.forEach(selectedPassengerDetailsList :: add);
+		}
+		return selectedPassengerDetailsList;
+	}
+	
+}

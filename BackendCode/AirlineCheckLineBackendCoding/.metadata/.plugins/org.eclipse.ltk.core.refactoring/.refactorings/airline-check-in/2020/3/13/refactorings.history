@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.airlinecheckin.io.airlinecheckin.model.Flightdetails&apos; to &apos;FlightDetails&apos;&#x0D;&#x0A;- Original project: &apos;airline-check-in&apos;&#x0D;&#x0A;- Original element: &apos;com.airlinecheckin.io.airlinecheckin.model.Flightdetails&apos;&#x0D;&#x0A;- Renamed element: &apos;com.airlinecheckin.io.airlinecheckin.model.FlightDetails&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Flightdetails&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.airlinecheckin.io.airlinecheckin.model{Flightdetails.java[Flightdetails" matchStrategy="1" name="FlightDetails" qualified="false" references="true" similarDeclarations="false" stamp="1584860897175" textual="false" version="1.0"/>
+</session>

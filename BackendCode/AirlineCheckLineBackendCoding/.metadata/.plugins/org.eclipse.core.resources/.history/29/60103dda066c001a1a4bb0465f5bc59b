@@ -1,0 +1,11 @@
+package com.airlinecheckin.io.airlinecheckin.service;
+
+public class PassengerDetailsService {
+
+	private List<Topic> topics = new ArrayList<>(Arrays.asList(
+			new Topic("Spring", "Spring Framework", "Spring Framework Description"),
+			new Topic("Java", "Core Java", "Core Java Description"),
+			new Topic("JavaScript", "JavaScript", "JavaScript Description")
+			));
+	
+}

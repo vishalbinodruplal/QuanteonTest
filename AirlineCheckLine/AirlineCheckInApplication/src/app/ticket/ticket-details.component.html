@@ -1,0 +1,71 @@
+<div>
+<div class="set-Parent-Padding" style="height: 100%;">
+    <table class="table1">
+        <th colspan="3" style="text-align: center;" class="th1">
+            Flight Details
+        </th>
+        <tr>
+          <th class="th1">Flight Number</th>
+          <th class="th1">From (Source)</th> 
+          <th class="th1">To (Destination)</th>
+        </tr>
+        <tr *ngIf='flightDetails'>
+          <td class="td1">{{ flightDetails.flightNo | uppercase }}</td>
+          <td class="td1">{{ flightDetails.flightFrom | uppercase }}</td>
+          <td class="td1">{{ flightDetails.flightTo | uppercase }}</td>
+        </tr>    
+      </table>
+</div>
+
+<div class="set-Parent-Padding" style="height: 100%;">
+  <p style="text-align: center;">Passenger Details
+    <button style="float: right;" style="margin-left: 5%;" mat-raised-button (click)="checkIn()" color="primary">Click To Check-In</button>
+  </p>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="$event ? selection.toggle(row) : null"
+                      [checked]="selection.isSelected(row)"
+                      [disabled]='row.checkedInStatus'>
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+    <!-- Name of Passenger Column -->
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.firstName | uppercase}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef> Age </th>
+      <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="seatNo">
+      <th mat-header-cell *matHeaderCellDef> Seat Number </th>
+      <td mat-cell *matCellDef="let element"> {{element.seatNo | uppercase}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="checkedInStatus">
+      <th mat-header-cell *matHeaderCellDef> Checked-In Status </th>
+      <td mat-cell *matCellDef="let element"> {{element.checkedInStatus==true ? 'Already Checked-In' : 'Not Checked-In'}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+        (click)="selection.toggle(row)">
+    </tr>
+  </table>
+</div>
+
+</div>
